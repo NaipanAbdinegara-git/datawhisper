@@ -31,8 +31,9 @@ venv/
 ENV/
 env/
 
-# VS Code
+# IDE folders
 .vscode/
+.idea/
 
 # Logs and runtime files
 *.log
@@ -55,3 +56,5 @@ Thumbs.db
 # Sensitive files
 *.env
 .env.*
+*.md
+*.agent.md
