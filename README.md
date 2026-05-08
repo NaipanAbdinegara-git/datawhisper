@@ -35,8 +35,3 @@ A sample dataset is included in `sample_data.csv` so you can try the tool immedi
 - `main.py`: main DataWhisper application
 - `requirements.txt`: dependencies for the project
 - `sample_data.csv`: sample sales dataset for testing
-- `.gitignore`: ignores Python and editor artifacts
-- `AGENT.md`: project persona and task guidance
-
-## Notes
-If you want, I can also add a `--json` output mode, an Excel example, or a simple data profiling report.
