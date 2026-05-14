@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataWhisper - Data Analysis</title>
+    <link rel="stylesheet" href="{{ css_url }}">
+</head>
+<body>
+    <main>
+        <section class="mica-card reveal delay-1">
+            <h1>Welcome to DataWhisper</h1>
+            <p>Transform your raw CSV or Excel data into meaningful insights. Upload your file and let DataWhisper analyze it for you.</p>
+            
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <label for="file">Select your CSV or Excel file:</label>
+                <input type="file" id="file" name="file" accept=".csv,.xlsx,.xls" required>
+                <button type="submit">Analyze Data</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>DataWhisper &copy; 2026 | <a href="https://github.com/NaipanAbdinegara-git" target="_blank">GitHub</a> | <a href="https://github.com/NaipanAbdinegara-git/datawhisper" target="_blank">Repository</a></p>
+    </footer>
+</body>
+</html>

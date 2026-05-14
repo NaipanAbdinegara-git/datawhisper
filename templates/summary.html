@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Summary - DataWhisper</title>
+    <link rel="stylesheet" href="{{ css_url }}">
+</head>
+<body>
+    <main>
+        <section class="mica-card reveal delay-1">
+            <h1>Data Summary</h1>
+            <div class="mica-divider"></div>
+            
+            <h2>General Information</h2>
+            <p><span class="highlight">Rows:</span> {{ summary['rows'] }}</p>
+            <p><span class="highlight">Columns:</span> {{ summary['columns'] }}</p>
+            <p><span class="highlight">Fields:</span> {{ ', '.join(summary['column_names']) }}</p>
+            <p><span class="highlight">Missing Values:</span> {{ summary['missing_values'] }}</p>
+        </section>
+
+        {% if summary['numeric_summary'] %}
+        <section class="mica-card reveal delay-2">
+            <h2>Numeric Summary</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>Mean</th>
+                        <th>Min</th>
+                        <th>Max</th>
+                        <th>Std Dev</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for field, stats in summary['numeric_summary'].items() %}
+                    <tr>
+                        <td><strong>{{ field }}</strong></td>
+                        <td>{{ "%.2f" | format(stats['mean']) }}</td>
+                        <td>{{ "%.2f" | format(stats['min']) }}</td>
+                        <td>{{ "%.2f" | format(stats['max']) }}</td>
+                        <td>{{ "%.2f" | format(stats['std']) }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+        {% endif %}
+
+        {% if summary['top_categories'] %}
+        <section class="mica-card reveal delay-3">
+            <h2>Top Categories</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>Top Values</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for field, values in summary['top_categories'].items() %}
+                    <tr>
+                        <td><strong>{{ field }}</strong></td>
+                        <td>
+                            {% for value, count in values.items() %}
+                                <span class="highlight">{{ value }}</span> ({{ count }}){% if not loop.last %}<br>{% endif %}
+                            {% endfor %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+        {% endif %}
+    </main>
+
+    <footer>
+        <p>DataWhisper &copy; 2026 | <a href="https://github.com/NaipanAbdinegara-git" target="_blank">GitHub</a> | <a href="https://github.com/NaipanAbdinegara-git/datawhisper" target="_blank">Repository</a></p>
+    </footer>
+</body>
+</html>
