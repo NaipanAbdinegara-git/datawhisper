@@ -11,7 +11,6 @@
   --font-main: 'Segoe UI', 'Poppins', sans-serif;
 }
 
-/* --- Base Setup --- */
 * { 
   box-sizing: border-box; 
   margin: 0; 
@@ -28,7 +27,6 @@ body {
   flex-direction: column;
 }
 
-/* --- Main Content Area --- */
 main { 
   flex: 1 0 auto; 
   padding: 3rem 1rem; 
@@ -37,7 +35,6 @@ main {
   margin: 0 auto; 
 }
 
-/* Menarik card pertama agar lebih dekat ke atas */
 main section:first-of-type {
   margin-top: 10px;
 }
@@ -62,7 +59,6 @@ footer a:hover {
   transform: translateY(-2px);
 }
 
-/* --- Mica Card & Effects --- */
 .mica-card {
   background: var(--mica-bg);
   backdrop-filter: var(--mica-blur);
@@ -82,7 +78,6 @@ footer a:hover {
   box-shadow: 0 15px 45px rgba(0, 0, 0, 0.1);
 }
 
-/* Shine effect pas di-hover */
 .mica-card::before {
   content: "";
   position: absolute;
@@ -110,7 +105,6 @@ footer a:hover {
   font-weight: 600; 
 }
 
-/* --- Container Tambahan --- */
 .mica-container {
   background: var(--mica-bg);
   backdrop-filter: var(--mica-blur);
@@ -122,7 +116,6 @@ footer a:hover {
   margin-bottom: 2rem;
 }
 
-/* --- Hero Heading Section --- */
 h1 {
   font-size: clamp(1.8rem, 5vw, 2.6rem);
   font-weight: 700;
@@ -139,7 +132,6 @@ h2 {
   margin-top: 2rem;
 }
 
-/* --- Form Styling --- */
 form {
   display: flex;
   flex-direction: column;
@@ -201,7 +193,6 @@ button:active {
   transform: translateY(0);
 }
 
-/* --- Table Styling --- */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -231,7 +222,6 @@ table tr:hover {
   background: rgba(0, 120, 212, 0.1);
 }
 
-/* --- Paragraph & Text --- */
 p {
   line-height: 1.8;
   color: var(--text-secondary);
@@ -239,7 +229,6 @@ p {
   font-size: 1rem;
 }
 
-/* --- Animation Library --- */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -260,7 +249,6 @@ p {
 .delay-2 { animation-delay: 0.4s; }
 .delay-3 { animation-delay: 0.6s; }
 
-/* --- Mobile Fix --- */
 @media (max-width: 600px) {
   main { 
     padding: 1.5rem 1rem 3rem 1rem;
