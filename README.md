@@ -18,18 +18,23 @@ It loads tabular data, validates and cleans it, then prints a polished console s
 - `rich`
 
 ## Install
-```powershell
+```bash
 cd "C:\Users\naipa\OneDrive\Dokumen\PYTHON"
 pip install -r requirements.txt
 ```
 
 ## Run
-```powershell
-python main.py sample_data.csv
+```bash
+python3 main.py sample_data.csv
+```
+
+## Run as a Web Application
+```bash
+python3 app.py
 ```
 
 ## Sample data
-A sample dataset is included in `sample_data.csv` so you can try the tool immediately.
+A sample dataset is included in `sample_data.csv` and `sample_missing_data.csv` so you can try the tool immediately.
 
 ## Files
 - `main.py`: main DataWhisper application
