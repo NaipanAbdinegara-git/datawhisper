@@ -19,7 +19,7 @@ It loads tabular data, validates and cleans it, then prints a polished console s
 
 ## Install
 ```bash
-cd "C:\Users\naipa\OneDrive\Dokumen\PYTHON"
+cd <path-to-project>
 pip install -r requirements.txt
 ```
 
