@@ -1,7 +1,7 @@
 # DataWhisper
 
-DataWhisper is a lightweight Python tool that turns raw CSV/Excel data into readable, story-style insights.
-It loads tabular data, validates and cleans it, then prints a polished console summary using `rich`.
+DataWhisper is a lightweight Python tool that turns raw `CSV/Excel data` into readable, story-style insights.
+It loads tabular data, validates and cleans it, then prints a polished console summary using `rich`, `pandas`, `argparse`.
 
 ## What it does
 - loads CSV or Excel files
