@@ -12,7 +12,6 @@ console = Console()
 
 
 def load_data(file_path: Path) -> pd.DataFrame:
-    """Load CSV or Excel into a DataFrame."""
     if not file_path.exists():
         raise FileNotFoundError(f"File not found: {file_path}")
 
@@ -27,7 +26,6 @@ def load_data(file_path: Path) -> pd.DataFrame:
 
 
 def validate_data(df: pd.DataFrame) -> pd.DataFrame:
-    """Basic validation and cleanup for raw tabular data."""
     if df.empty:
         raise ValueError("The data file is empty. Please provide a file with rows.")
 
@@ -39,7 +37,6 @@ def validate_data(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def summarize_data(df: pd.DataFrame) -> dict:
-    """Build numerical and categorical insights for storytelling."""
     summary = {
         "rows": len(df),
         "columns": len(df.columns),
