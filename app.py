@@ -7,7 +7,6 @@ from processing import load_data, validate_data, summarize_data
 
 app = Flask(__name__)
 
-# Configure upload folder
 UPLOAD_FOLDER = 'uploads'
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -30,7 +29,6 @@ def upload_file():
     file.save(file_path)
 
     try:
-        # Process the uploaded file
         df = load_data(file_path)
         df = validate_data(df)
         summary = summarize_data(df)
