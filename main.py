@@ -7,9 +7,7 @@ from rich.panel import Panel
 from rich.table import Table
 from rich.text import Text
 
-
 console = Console()
-
 
 def load_data(file_path: Path) -> pd.DataFrame:
     if not file_path.exists():
@@ -21,7 +19,6 @@ def load_data(file_path: Path) -> pd.DataFrame:
         df = pd.read_excel(file_path)
     else:
         raise ValueError("Unsupported file format. Use CSV or Excel.")
-
     return df
 
 
@@ -32,7 +29,6 @@ def validate_data(df: pd.DataFrame) -> pd.DataFrame:
     df = df.dropna(axis=1, how="all")
     df = df.dropna(axis=0, how="all")
     df.columns = [str(col).strip().replace(" ", "_").lower() for col in df.columns]
-
     return df
 
 
@@ -60,7 +56,6 @@ def summarize_data(df: pd.DataFrame) -> dict:
     for col in categorical_columns:
         top_values = df[col].value_counts(dropna=False).head(3).to_dict()
         summary["top_categories"][col] = top_values
-
     return summary
 
 
@@ -72,7 +67,6 @@ def _get_categorical_columns(df: pd.DataFrame) -> list[str]:
         sample = df[col].dropna()
         if sample.empty or sample.map(lambda value: isinstance(value, str)).all():
             string_columns.append(col)
-
     return list(dict.fromkeys(string_columns))
 
 
@@ -101,7 +95,6 @@ def build_numeric_table(summary: dict) -> Table:
             f"{stats['max']:.2f}",
             f"{stats['std']:.2f}",
         )
-
     return table
 
 
@@ -113,13 +106,11 @@ def build_category_table(summary: dict) -> Table:
     for col, values in summary["top_categories"].items():
         formatted = ", ".join(f"{key} ({count})" for key, count in values.items())
         table.add_row(col, formatted)
-
     return table
 
 
 def print_summary(summary: dict) -> None:
     console.print(build_summary_panel(summary))
-
     if summary["numeric_summary"]:
         console.print(build_numeric_table(summary))
     else:
@@ -146,7 +137,6 @@ def print_summary(summary: dict) -> None:
                 border_style="green",
             )
         )
-
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
